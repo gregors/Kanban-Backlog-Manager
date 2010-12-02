@@ -1,0 +1,10 @@
+db/*.sqlite3
+log/*
+tmp/**/*
+vendor/**/*
+.tmp*
+.bundle/*
+*~
+Gemfile.lock
+Thumbs.db
+/.project

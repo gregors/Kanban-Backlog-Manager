@@ -1,0 +1,16 @@
+<h1>All Stories</h1>
+
+
+<div class="new_story_button">
+  <%=link_to "Create a new story", new_story_path%>
+</div>
+
+
+<div class="filterbar"> <span style="float:left;margin-right:5px">Filter by Component</span>
+<%= collection_select :story, :component_id, Component.all, :id, :title,
+                         {:include_blank => true },
+                         {:onChange => remote_function(:update => "storiestable", :url => { :action => :index}, :with => "'component_id='+this.value", :method =>:get) } %>  
+</div>
+
+<%=render :partial => 'story_table' %>
+

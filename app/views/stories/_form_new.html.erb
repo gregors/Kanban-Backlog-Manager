@@ -1,0 +1,51 @@
+<%= form_for(@story) do |f| %>
+  <% if @story.errors.any? %>
+  <div id="errorExplanation">
+    <h2><%= pluralize(@story.errors.count, "error") %> prohibited this post from being saved:</h2>
+    <ul>
+    <% @story.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+ 
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_area :title, :cols => 60, :rows => 2 %>
+    <p class = "form_limits">(255 characters at most)</p>
+  </div>
+  <div class="field">
+    <%= f.label :story_type %>
+	  <%= f.select(:story_type_id, StoryType.all.collect { |v| [v.title,v.id] }, {:include_blank => true} ) %>
+  </div>
+  <div class="field">
+    <%= f.label :sory_points %>
+	  <%= f.select(:storypoint_value_id, StorypointValue.all.collect { |v| [v.value,v.id] }, {:include_blank => true} ) %>
+  </div>
+  <div class="field">
+    <%= f.label :busines_value %>
+	  <%= f.select(:business_value_id, BusinessValue.all.collect { |v| [v.value,v.id] }, {:include_blank => true} ) %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description, :cols => 60, :rows => 10 %>
+    <p class = "form_limits">(500 characters at most)</p>
+  </div>
+  <div class="field">
+    <%= f.label :how_to_demo %><br />
+    <%= f.text_area :how_to_demo, :cols => 60, :rows => 10 %>
+    <p class = "form_limits">(500 characters at most)</p>
+  </div>
+  <div class="field">
+    <%= f.label :priority %><br />
+    <%= f.text_field :priority %>
+  </div>
+  <div class="field">
+    <%= f.label :components %>
+	  <%= f.select(:component_id, Component.all.collect { |v| [v.title,v.id] }, {:include_blank => true} ) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

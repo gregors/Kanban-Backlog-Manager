@@ -1,0 +1,19 @@
+<h1><%=@story.title%></h1>
+
+<h2>Description</h2>
+<p><%=@story.description%></p>
+
+<h2>How to Demo</h2>
+<p><%=@story.how_to_demo%></p>
+
+<h2>Info</h2>
+<table>
+<tr><td>Story Points</td><td><%=@story.storypoint_value.value unless @story.storypoint_value.nil?%></td></tr>
+<tr><td>Business Value</td><td><%=@story.business_value.value unless @story.business_value.nil?%></td></tr>
+<tr><td>Priority</td><td><%=@story.priority%></td></tr>
+<tr><td>Status</td><td><%=@story.story_status.title unless @story.story_status.nil?%></td></tr>
+<tr><td>Type</td><td><%=@story.story_type.title%></td></tr>
+<tr><td>Component</td><td><%=@story.component.title unless @story.component.nil?%></td></tr>
+<tr><td>Started at</td><td><%=@story.started_at%></td></tr>
+<tr><td>Finished at</td><td><%=@story.finished_at%></td></tr>
+</table>

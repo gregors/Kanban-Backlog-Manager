@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: 
+  description: 
+  how_to_demo: 
+  storypoints: 
+  businessvalue: 
+  story_status_id: 
+  component_id: 
+  started_at: 
+  finished_at: 2010-11-30 09:00:47
+
+two:
+  title: 
+  description: 
+  how_to_demo: 
+  storypoints: 
+  businessvalue: 
+  story_status_id: 
+  component_id: 
+  started_at: 
+  finished_at: 2010-11-30 09:00:47
