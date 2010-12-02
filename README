@@ -3,3 +3,13 @@
 This is a tool to manage backlogs of user stories. Intended mainly for Kanban, but could be used for Scrum, too. One of the main features is the possibility to print very nice story cards. 
 
 The tool is written in Rails 3.
+
+== Getting Started
+
+bundle install
+rake db:migrate
+rake db:seed
+
+rails server
+
+open localhost:3000/stories/
