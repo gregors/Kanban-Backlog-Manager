@@ -1,9 +1,9 @@
 <tr>
   <td><%=story.id%></td>
-  <td><%=story.component.nil? ? " " : "[#{story.component.title}]"%> <%=link_to story.title, story_path(story)%></td>
-  <td><%=story.business_value.value unless story.business_value.nil?%></td>
-  <td><%=story.storypoint_value.value unless story.storypoint_value.nil?%></td>
   <td><%=story.priority%></td>
+  <td><%=story.component.nil? ? " " : "[#{story.component.title}]"%> <%=link_to story.title, story_path(story)%></td>
+  <td style="text-align:right"><%=story.business_value.value unless story.business_value.nil?%></td>
+  <td style="text-align:right"><%=story.storypoint_value.value unless story.storypoint_value.nil?%></td>
   <td><%=story.story_status.title unless story.story_status.nil?%></td>
   <td><%=link_to "StoryCard as PDF", story_path(story, :format => "pdf")%></td>
   <td><%=link_to "Edit", edit_story_path(story)%></td>

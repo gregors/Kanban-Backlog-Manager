@@ -1,10 +1,10 @@
 <table id="storiestable" class="stories" cellpadding="0" cellspacing="0">
   <tr>
     <th>Id</th>
+    <th>Priority</th>
     <th>Title</th>
     <th>Business Value</th>
     <th>Story Points</th>
-    <th>Priority</th>
     <th>Status</th>
     <th></th>
     <th></th>
@@ -12,4 +12,13 @@
 <%@stories.each do |story|%>
   <%=render :partial => 'story_table_row', :locals => {:story => story}%>
 <%end%>
+<tr class="footer">
+  <td colspan="2">Totals:</td>
+  <td><%=@stories.length%></td>
+  <td style="text-align:right"><%=@stories.collect{|s| s.business_value.nil? ? 0 : s.business_value.value.to_i}.sum%></td>
+  <td style="text-align:right"><%=@stories.collect{|s| s.storypoint_value.nil? ? 0 : s.storypoint_value.value.to_i}.sum%></td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>  
 </table>

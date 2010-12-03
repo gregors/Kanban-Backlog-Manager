@@ -1,12 +1,19 @@
 
 pdf.font "Helvetica"
   
+pdf.fill_color "cccccc"
+
 if ! @story.component.nil?
-  pdf.fill_color "cccccc"
-  pdf.text "#{@story.component.title}", :size => 12, :style => :bold, :spacing => 4
-  pdf.move_down 5
+  pdf.draw_text "#{@story.component.title}", :size => 12, :style => :bold, :at => [0, 230]
 end
 
+if ! @story.story_type.nil?
+  pdf.draw_text "#{@story.story_type.title} [#{@story.id}]", :style => :bold, :at => [290, 230]
+else
+  pdf.draw_text "[#{@story.id}]", :style => :bold, :at => [290, 230]
+end
+
+pdf.move_down 5
 pdf.fill_color "000000"
 pdf.text "#{@story.title}", :size => 14, :style => :bold, :spacing => 4
 

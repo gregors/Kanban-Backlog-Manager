@@ -23,6 +23,12 @@ table.stories td{
 	text-align:left;
 }
 
+table.stories tr.footer td {
+	border-top:2px solid silver;
+	border-bottom:3px solid silver;
+	font-weight:bold;
+}
+
 .new_story_button {
 	width:150px;
 	padding:5px;
