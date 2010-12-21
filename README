@@ -4,6 +4,8 @@ This is a tool to manage backlogs of user stories. Intended mainly for Kanban, b
 
 The tool is written in Rails 3.
 
+Disclaimer: this is just an early stage prototype and probably does not suffice even our own coding standards. 
+
 == Getting Started
 
 bundle install
