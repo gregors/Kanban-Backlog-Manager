@@ -16,12 +16,15 @@ class StoriesController < ApplicationController
   def show
     @story = Story.find(params[:id])
     
-    prawnto :prawn=>{:page_layout=>:landscape, :page_size => 'A6'} #sets parameters for prawn pdf generator
-    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @story }
-      format.pdf { render :layout => false }
+      format.pdf do
+        pdf = StoryPdf.new(@story)
+        send_data pdf.render, filename: "story_#{@story.id}.pdf",
+                              type: "application/pdf",
+                              disposition: "inline"
+      end
     end
   end
   
